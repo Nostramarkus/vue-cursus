@@ -3,10 +3,12 @@
     <h1>Home</h1>
     <p>Welkom {{naam}} bij de cursus.</p>
 
-    <div class="deelnemer" v-for="deelnemer in deelnemers" :key="deelnemer.id">
+    <!-- div class="deelnemer" v-for="deelnemer in deelnemers" :key="deelnemer.id">
       <div class="naam">{{deelnemer.naam}}</div>
       <div class="afdeling">{{deelnemer.afdeling}}</div>
-    </div>
+    </div-->
+
+    <Deelnemer/>
 
     <br>
     <h2>Voeg nieuwe deelnemer toe</h2>
@@ -24,8 +26,13 @@
 </template>
 
 <script>
+import Deelnemer from "@/components/Deelnemer.vue";
+
 export default {
   name: "Home",
+  components: {
+    Deelnemer
+  },
   data() {
     return {
       naam: "Piet",
